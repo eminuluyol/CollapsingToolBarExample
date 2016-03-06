@@ -2,15 +2,12 @@ package com.taurus.collapsingtoolbarexample;
 
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.taurus.collapsingtoolbarexample.adapters.MyAdapter;
 import com.taurus.collapsingtoolbarexample.models.Person;
@@ -32,20 +29,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapse_toolbar);
-        collapsingToolbar.setTitle("Title goes here");
+        collapsingToolbar.setTitle("Keep Calm ...");
 
         initializeData();
 
@@ -65,13 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeData() {
         persons = new ArrayList<>();
-        persons.add(new Person("Mehmet Emin Uluyol", "23 years old", R.drawable.profile_picture));
-        persons.add(new Person("Mr. Brown", "25 years old", R.drawable.avatar_empty));
-        persons.add(new Person("Mrs. Brown", "35 years old", R.drawable.avatar_empty));
-        persons.add(new Person("Mr. Smith", "35 years old", R.drawable.avatar_empty));
-        persons.add(new Person("Mrs. Smith", "35 years old", R.drawable.avatar_empty));
-        persons.add(new Person("Ordinary Person", "35 years old", R.drawable.avatar_empty));
-        persons.add(new Person("Random Person", "35 years old", R.drawable.avatar_empty));
+
+        for(int i = 0; i<20; i++){
+            persons.add(new Person("DEADPOOL", "Witness the begining of a happy ending", R.drawable.deadpool_poster));
+        }
+
     }
 
     @Override
